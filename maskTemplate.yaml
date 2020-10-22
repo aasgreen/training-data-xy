@@ -1,0 +1,63 @@
+#Mask Template:
+
+image_dimensions: [64,64]
+
+submasks:
+    gauss:
+        use: True
+        params:
+            min: 0 #units of sigma
+            max: 1.5
+
+    standardize:
+        use: False
+        params:
+            imgMeanMax: 0.7
+            imgMeanMin: 0.3
+            imgStdMax: 24
+            imgStdMin: 1
+
+    smart:
+        use: True
+        params:
+            strengthMax: .2
+            strengthMin: 0.0
+            pathToNoise: '../../data/noiseFiles/'
+    skew:
+        use: False
+        params:
+            skewMax: 1.0
+            skewMin: 0.0
+
+    circle:
+        use: True
+        params:
+            numCircles: 3
+            radiusRange : [1,20]
+            brightnessRange: [-1,1] 
+    grid:
+        use: True
+        params:
+            gridRange: .3
+            
+    row:
+        use: False
+        params:
+            strengthMax: 30
+            strengthMin: 0
+    gradient:
+        use: True
+        params:
+            lower_bound: .1
+   
+    scans:
+        use: True
+        params:
+            strength: .05
+
+    speckle:
+        use: True
+        params:
+            maxSpeckles: 8
+            maxArea: 100
+            speckleStrength: .5
